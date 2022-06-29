@@ -1,0 +1,1261 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MkDocs Material Boilerplate (Starter Kit) - Deploy documentation to hosting platforms (Netlify, GitHub Pages, GitLab Pages, and AWS Amplify Console) with Docker, pipenv, and GitHub Actions.">
+      
+      
+      
+        <meta name="author" content="peaceiris">
+      
+      
+        <link rel="canonical" href="https://mkdocs.peaceiris.com/SNDB/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.7">
+    
+    
+      
+        <title>Solusi Numeri Diferensial Biasa - Komputasi Numerik</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="manifest" href="../manifest.json" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#solusi_numeri_persamaan_differensial_biasa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Komputasi Numerik" class="md-header__button md-logo" aria-label="Komputasi Numerik" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Komputasi Numerik
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Solusi Numeri Diferensial Biasa
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/peaceiris/mkdocs-material-boilerplate/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Komputasi Numerik" class="md-nav__button md-logo" aria-label="Komputasi Numerik" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Komputasi Numerik
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/peaceiris/mkdocs-material-boilerplate/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Turunan Numerik
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SNPL/" class="md-nav__link">
+        Solusi Numerik Persamaan Liner
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Solusi Numeri Diferensial Biasa
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Solusi Numeri Diferensial Biasa
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a_metode_eular" class="md-nav__link">
+    A. Metode Eular
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Metode Eular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2_algoritma_metode_eular" class="md-nav__link">
+    2. Algoritma Metode Eular
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_source_code_metode_eular" class="md-nav__link">
+    3. Source Code metode Eular
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b_metode_heun" class="md-nav__link">
+    B. Metode Heun
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Metode Heun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_algoritma_metode_heun" class="md-nav__link">
+    1. Algoritma Metode Heun
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_source_code_metode_heun" class="md-nav__link">
+    2. Source Code Metode Heun
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_metode_runge-kutta" class="md-nav__link">
+    3. Metode Runge-Kutta
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metode Runge-Kutta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_metode_runge-kutta_orde_1" class="md-nav__link">
+    1. Metode Runge-Kutta Orde 1
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Metode Runge-Kutta Orde 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algoritma_runge-kutta_orde_1" class="md-nav__link">
+    a. Algoritma Runge-Kutta Orde 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_1" class="md-nav__link">
+    b.  Source Code Metode Runge-Kutta Orde 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_metode_runge-kutta_orde_2" class="md-nav__link">
+    2. Metode Runge-Kutta Orde 2
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Metode Runge-Kutta Orde 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algoritma_metode_runge-kutta_orde_2" class="md-nav__link">
+    a. Algoritma Metode Runge-Kutta Orde 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_2" class="md-nav__link">
+    b. Source Code Metode Runge-Kutta Orde 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_metode_runge-kutta_orde_3" class="md-nav__link">
+    3. Metode Runge-Kutta Orde 3
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metode Runge-Kutta Orde 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algoritma_metode_runge-kutta_orde_3" class="md-nav__link">
+    a. Algoritma Metode Runge-Kutta Orde 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_3" class="md-nav__link">
+    b. Source Code Metode Runge-Kutta Orde 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_metode_runge-kutta_orde_4" class="md-nav__link">
+    4. Metode Runge-Kutta Orde 4
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Metode Runge-Kutta Orde 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algortma_metode_runge-kutta_orde_4" class="md-nav__link">
+    a. Algortma Metode Runge-Kutta Orde 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_4" class="md-nav__link">
+    b. Source Code Metode Runge-Kutta Orde 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referensi" class="md-nav__link">
+    Referensi
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a_metode_eular" class="md-nav__link">
+    A. Metode Eular
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Metode Eular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2_algoritma_metode_eular" class="md-nav__link">
+    2. Algoritma Metode Eular
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_source_code_metode_eular" class="md-nav__link">
+    3. Source Code metode Eular
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b_metode_heun" class="md-nav__link">
+    B. Metode Heun
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Metode Heun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_algoritma_metode_heun" class="md-nav__link">
+    1. Algoritma Metode Heun
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_source_code_metode_heun" class="md-nav__link">
+    2. Source Code Metode Heun
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_metode_runge-kutta" class="md-nav__link">
+    3. Metode Runge-Kutta
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metode Runge-Kutta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_metode_runge-kutta_orde_1" class="md-nav__link">
+    1. Metode Runge-Kutta Orde 1
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Metode Runge-Kutta Orde 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algoritma_runge-kutta_orde_1" class="md-nav__link">
+    a. Algoritma Runge-Kutta Orde 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_1" class="md-nav__link">
+    b.  Source Code Metode Runge-Kutta Orde 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_metode_runge-kutta_orde_2" class="md-nav__link">
+    2. Metode Runge-Kutta Orde 2
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Metode Runge-Kutta Orde 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algoritma_metode_runge-kutta_orde_2" class="md-nav__link">
+    a. Algoritma Metode Runge-Kutta Orde 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_2" class="md-nav__link">
+    b. Source Code Metode Runge-Kutta Orde 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_metode_runge-kutta_orde_3" class="md-nav__link">
+    3. Metode Runge-Kutta Orde 3
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metode Runge-Kutta Orde 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algoritma_metode_runge-kutta_orde_3" class="md-nav__link">
+    a. Algoritma Metode Runge-Kutta Orde 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_3" class="md-nav__link">
+    b. Source Code Metode Runge-Kutta Orde 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_metode_runge-kutta_orde_4" class="md-nav__link">
+    4. Metode Runge-Kutta Orde 4
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Metode Runge-Kutta Orde 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_algortma_metode_runge-kutta_orde_4" class="md-nav__link">
+    a. Algortma Metode Runge-Kutta Orde 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_source_code_metode_runge-kutta_orde_4" class="md-nav__link">
+    b. Source Code Metode Runge-Kutta Orde 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referensi" class="md-nav__link">
+    Referensi
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/peaceiris/mkdocs-material-boilerplate/edit/master/docs_sample/SNDB.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="solusi_numeri_persamaan_differensial_biasa">Solusi Numeri Persamaan Differensial Biasa<a class="headerlink" href="#solusi_numeri_persamaan_differensial_biasa" title="Permanent link">&para;</a></h1>
+<p>Persamaan Differensial merupakan sebuah persamaan yang terdiri dari beberapa turunan biasa dari fungsi yang tidak diketahui dari variabel bebas tunggal dan variabel tersebut hanya disimbolkan degna x. Berikut ini beberapa contoh differensial biasa.</p>
+<p>
+<script type="math/tex">1.\ \dfrac{dy}{dx} = x +y\\</script>
+<script type="math/tex">2.\ y^{'} = x^{2}+y^{2}\\</script>
+<script type="math/tex">3.\ \dfrac{2dy}{dx} +x^{2}y-y = 0\\</script>
+<script type="math/tex">4.\ y^{''} + y^{'}cos\ x -3y = sin\ 2x\\</script>
+<script type="math/tex">5.\ 2y^{'''}-23y^{'} = 1 -y^{''}</script>
+</p>
+<p>Variabel bebas dari contoh tersebut adalah <script type="math/tex">x</script> dan variabel terikatnya adalah <script type="math/tex">y</script> yang merupakan fungsi dari x atau juga bisa ditulis y = f(x). Persamaan Differensial Biasa dikelompok kan berdasarkan oredenya yaitu:</p>
+<ol>
+<li>Persamaan Differensial orde 1 dimana turunan tertingginya adalah turunan pertama, pada contoh diatas berada pada nomor 1,2 dan 3/</li>
+<li>Persamaan Differensial orde 2 dimana turunan tertingginya adalah turunan kedua, pada contoh diatas berada pada nomor 4.</li>
+<li>Persamaan Differensian Biasa orde 3 dimana turunan tertingginya adalah turunan ketiga, pada contoh ditas berada pada nomor 5.</li>
+</ol>
+<p>Bentuk baku persamaan differensial biasa dapat ditulis seperti berikut:
+<script type="math/tex; mode=display">
+y^{'} = f(x,y)\ \ \ \ \ \ atau\ \ \ \ \ \ \dfrac{dy}{dx} = f(x,y)
+</script>
+dengan niilai awal y(x0) = y</p>
+<p>Persamaan differensial biasa orede satu tidaka mengikuti bentuk umum tersebut jadi harus ditulis ulang agar dapat diselesaikan. Penyelesaian persamaan differensial biasa secara numerik berarti menghitung nilai fungsi di <script type="math/tex">x_{i+1} = h</script> , dengan h merupakan ukuran langkah setiap lelaran. pada metode analitik nilai awal digunakan untuk merperoleh solusi yang unik , sedangkan pada metode numerik nilai awal berfungsi untuk memulai lelaran. </p>
+<p>Dibawah ini akan dijelaskan beberapa solusi numerik untuk menyelesaikan persamaan differensial biasa.</p>
+<h4 id="a_metode_eular">A. Metode Eular<a class="headerlink" href="#a_metode_eular" title="Permanent link">&para;</a></h4>
+<p>Metode eular adalah metode untuk menyelesaikan persamaan differensial biasa yang dihasilkan daru turunan deret Tylor. Metode eular juga disebut sebagai metode orde pertama karena hanya mengambil sampai suku pertama saja dari deret Tylor. Metode eular juga dapat di turunkan dengan menggunakan metode aturan segi empat untuk menginsterasikan <script type="math/tex">(x,y)</script> pada persamaan differensial. bentuk metode eular sebagai berikut:
+<script type="math/tex; mode=display">
+y(x_{i+1}) - y(x_{i}) = hf(x_{i},y(x_{i}))\\
+atau\\
+y(x_{i+1}) = y(x_{i}) + hf(x_{i},y(x_{i}))
+</script>
+Contoh selesaikan persamaan differensial berikut:</p>
+<p>Diketahui persamaan differensial biasa sebagai berikut
+<script type="math/tex; mode=display">
+\dfrac{dy}{dt} = x + y \ dan\ y(0)=1
+</script>
+gunakan metode eular untuk menghitung y(0,10) dengan ukuran langkah h = 0.02 dan diketahui solusi persamaan differensial biasa sejatinya = 1,1103</p>
+<h5 id="2_algoritma_metode_eular">2. Algoritma Metode Eular<a class="headerlink" href="#2_algoritma_metode_eular" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>Deklarasikan fungsi persamaan differensial biasa yang akan di selesaikan.</p>
+</li>
+<li>
+<p>Masukkan inputan yang dibutuhkan seperti x(0), y(0), xb dan h</p>
+</li>
+<li>
+<p>Hitung perulangan yang diperlukan dengan menggunakan rumus
+   <script type="math/tex; mode=display">
+   n = (x_{b} - x_{0})/h
+   </script>
+</p>
+</li>
+<li>
+<p>Inisialisasi nilai x dan y awal sama dengan 0 dan y(0).</p>
+</li>
+<li>Tentukan nilai analitiknya untuk menghitung nilai eror</li>
+<li>lakukan perulangan sebanyak n kali.</li>
+<li>Setiap kali melakukan perulangan maka nilai x dan y akan diupdate dengan menggunakn persamaan metode Eular, dan hitung nilai erornya kemudian tampilkan hasilnya</li>
+</ol>
+<h5 id="3_source_code_metode_eular">3. Source Code metode Eular<a class="headerlink" href="#3_source_code_metode_eular" title="Permanent link">&para;</a></h5>
+<p>berikut ini merupakan code hasil dari implementasi algoritma di atas:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penyelesaian Persamaan Differensial Biasa Menggunakan Metode Euler&quot;</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X0 : &quot;</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai y0 : &quot;</span><span class="p">))</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X yang dicari : &quot;</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai h : &quot;</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+<span class="n">iterasi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">true</span> <span class="o">=</span>  <span class="mf">1.1103</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE EULER -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;|i&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;x(i)&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;y(i)</span><span class="se">\t\t</span><span class="s1">|e&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x0</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">iterasi</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">h</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>dan ketika code tersbut dijalankan maka outputnya sebagai berikut</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Penyelesaian</span> <span class="n">Persamaan</span> <span class="n">Differensial</span> <span class="n">Biasa</span> <span class="n">Menggunakan</span> <span class="n">Metode</span> <span class="n">Euler</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X0</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">y0</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X</span> <span class="n">yang</span> <span class="n">dicari</span> <span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">h</span> <span class="p">:</span> <span class="mf">0.02</span>
+<span class="o">==================================================</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-</span> <span class="n">METODE</span> <span class="n">EULER</span> <span class="o">-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="o">==================================================</span>
+<span class="o">|</span><span class="n">i</span>  <span class="o">|</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span> <span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span><span class="n">e</span>
+<span class="o">|</span><span class="mi">0</span>  <span class="o">|</span> <span class="mf">0.000000</span>  <span class="o">|</span> <span class="mf">1.000000</span>  <span class="o">|</span> <span class="mf">0.110300</span>
+<span class="o">|</span><span class="mi">1</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">1.020000</span>  <span class="o">|</span> <span class="mf">0.090300</span>
+<span class="o">|</span><span class="mi">2</span>  <span class="o">|</span> <span class="mf">0.040000</span>  <span class="o">|</span> <span class="mf">1.040800</span>  <span class="o">|</span> <span class="mf">0.069500</span>
+<span class="o">|</span><span class="mi">3</span>  <span class="o">|</span> <span class="mf">0.060000</span>  <span class="o">|</span> <span class="mf">1.062416</span>  <span class="o">|</span> <span class="mf">0.047884</span>
+<span class="o">|</span><span class="mi">4</span>  <span class="o">|</span> <span class="mf">0.080000</span>  <span class="o">|</span> <span class="mf">1.084864</span>  <span class="o">|</span> <span class="mf">0.025436</span>
+<span class="o">|</span><span class="mi">5</span>  <span class="o">|</span> <span class="mf">0.100000</span>  <span class="o">|</span> <span class="mf">1.108162</span>  <span class="o">|</span> <span class="mf">0.002138</span>
+<span class="o">==================================================</span>
+</code></pre></div>
+
+<h4 id="b_metode_heun">B. Metode Heun<a class="headerlink" href="#b_metode_heun" title="Permanent link">&para;</a></h4>
+<p>Metode Heun adalah metode perbaikan dari metode eular yang memiliki nilai eror yang tinggi. Pada metode ini solusi dari metode Eular dijadikan sebagai solusi perkiraan awal (predictor), lalu solusi perkiraan awal tersebut diperbaiki dengan metode Heun (corecor). Sehingga persamaannya dapat ditulis sabagai berikut:
+<script type="math/tex; mode=display">
+Predictor= y^{0}_{i+1} = y_{i} + hf(x_{i},y_{i})\\
+Corrector = y_{i+1} = y_{i}+\dfrac{h}{2}[f(x_{i},y{i})+f(x_i+1),y^{0}_{i+1}]
+</script>
+Contoh Soal:</p>
+<p>Diketahui PDB <script type="math/tex">\dfrac{dy}{dt} = x + y</script> dan <script type="math/tex">y(0) = 1</script> gunakan metode Heun  untuk menghitung <script type="math/tex">y(0,10)</script> dengan ukuran langkah <script type="math/tex">h = 0.02</script>. Dan diketahui solusi PDB sejatinya = <script type="math/tex">1,1103</script>
+</p>
+<h5 id="1_algoritma_metode_heun">1. Algoritma Metode Heun<a class="headerlink" href="#1_algoritma_metode_heun" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Deklarasikan fungsi persamaan differensial biasa yang akan diselesaikan.</li>
+<li>Masukkan inputan seperti <script type="math/tex">x_{0},y_{0},xb</script>, dan <script type="math/tex">h</script>.</li>
+<li>Hitung dan buat perulangan yang diperlukan dengan menggunakan rumus <script type="math/tex">n = (x_{b} - x_{0})/h</script>,</li>
+<li>Inisialisasi nilai <script type="math/tex">x</script> dan <script type="math/tex">y</script> awal sama dengan <script type="math/tex">x_{o}</script> dan <script type="math/tex">y_{0}</script>,</li>
+<li>Tentukan nilai analitiknya untuk menghitung nilai eror.</li>
+<li>Lakukan perulangan sebanyak nilai dari n.</li>
+<li>Setiap melakukan perulangan maka nilai <script type="math/tex">y</script>
+<em>predictor</em> dan <script type="math/tex">y</script>
+<em>corrector</em> serta <script type="math/tex">x</script>  akan diupdate dengan menggunakan persmaan metode Heeun, lalu hitung nilai erornya dan tampilkan hasilnya.</li>
+</ol>
+<h5 id="2_source_code_metode_heun">2. Source Code Metode Heun<a class="headerlink" href="#2_source_code_metode_heun" title="Permanent link">&para;</a></h5>
+<p>berikut ini merupakan code hasil dari implementasi algoritma di atas.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penyelesaian Persamaan Differensial Biasa Menggunakan Metode Heun&quot;</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X0 : &quot;</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai y0 : &quot;</span><span class="p">))</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X yang dicari : &quot;</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai h : &quot;</span><span class="p">))</span>
+<span class="n">iterasi</span> <span class="o">=</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">iterasi</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">true</span> <span class="o">=</span>  <span class="mf">1.1103</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE HEUN -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;|i&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;x(i)&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;y(i)</span><span class="se">\t\t</span><span class="s1">|e&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x0</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ypre</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">,</span><span class="n">ypre</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">h</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>dan ketika code diatas di jalankan maka hasilnya akan seperti berikut.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Penyelesaian</span> <span class="n">Persamaan</span> <span class="n">Differensial</span> <span class="n">Biasa</span> <span class="n">Menggunakan</span> <span class="n">Metode</span> <span class="n">Heun</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X0</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">y0</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X</span> <span class="n">yang</span> <span class="n">dicari</span> <span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">h</span> <span class="p">:</span> <span class="mf">0.02</span>
+<span class="o">==================================================</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-</span> <span class="n">METODE</span> <span class="n">HEUN</span> <span class="o">-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="o">==================================================</span>
+<span class="o">|</span><span class="n">i</span>  <span class="o">|</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span> <span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span><span class="n">e</span>
+<span class="o">|</span><span class="mi">0</span>  <span class="o">|</span> <span class="mf">0.000000</span>  <span class="o">|</span> <span class="mf">1.000000</span>  <span class="o">|</span> <span class="mf">0.110300</span>
+<span class="o">|</span><span class="mi">1</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">1.020400</span>  <span class="o">|</span> <span class="mf">0.089900</span>
+<span class="o">|</span><span class="mi">2</span>  <span class="o">|</span> <span class="mf">0.040000</span>  <span class="o">|</span> <span class="mf">1.041616</span>  <span class="o">|</span> <span class="mf">0.068684</span>
+<span class="o">|</span><span class="mi">3</span>  <span class="o">|</span> <span class="mf">0.060000</span>  <span class="o">|</span> <span class="mf">1.063665</span>  <span class="o">|</span> <span class="mf">0.046635</span>
+<span class="o">|</span><span class="mi">4</span>  <span class="o">|</span> <span class="mf">0.080000</span>  <span class="o">|</span> <span class="mf">1.086563</span>  <span class="o">|</span> <span class="mf">0.023737</span>
+<span class="o">|</span><span class="mi">5</span>  <span class="o">|</span> <span class="mf">0.100000</span>  <span class="o">|</span> <span class="mf">1.110327</span>  <span class="o">|</span> <span class="mf">0.000027</span>
+<span class="o">==================================================</span>
+</code></pre></div>
+
+<h4 id="3_metode_runge-kutta">3. Metode Runge-Kutta<a class="headerlink" href="#3_metode_runge-kutta" title="Permanent link">&para;</a></h4>
+<p>Pada metode Runge-Kutta persamaan differensial dapat diselesakan dengan ketelitian yang lebih tinggi, dan menghindarin mencari turunan yang lebih tinggi dengan cara mengevaluasi fungsi<script type="math/tex">f(x,y)</script> pada titik terpilih dalam setiap langkah. Metode ini paling banyak digunakan dalam praktek.</p>
+<p>bentuk umum metode runge-kutta orde-n adalah sebagai berikut:
+<script type="math/tex; mode=display">
+y_{i+1} = y_{i}+a_{1}k_{1}+a_{2}k_{2}+\ldots+a_{n}k_{n}
+</script>
+dengan <script type="math/tex">a_{1},a_{2},...,a_{n}</script> adalah tetapan dan 
+<script type="math/tex; mode=display">
+k_{1} = hf(x_{i},y_{i})\\
+k_{2} = hf(x_{i}+p_{1}h,y_{i}+q_{11}k_{1})\\
+k_{3} = hf(x_{i}+p_{2}h,y_{i}+q_{21}k_{1}+q_{22}k_{2}\\
+\cdots\\
+k_{n} = hf(x_{i}+p_{n-1}h,y_{i}+q_{n-1,1}k_{1}+q_{n-1,2}k_{2}+\cdots+q_{n-1,n-1} k_{n-1}
+</script>
+Dimana nilai <script type="math/tex">a_{i}, p_{i}, q_{ij}</script> dipilih sedemikian rupa sehingga meminimumkan galat perlangkah. Berikut ini jenis jenis metode Runge-Kutta berdasarkan orde nya.</p>
+<h5 id="1_metode_runge-kutta_orde_1">1. Metode Runge-Kutta Orde 1<a class="headerlink" href="#1_metode_runge-kutta_orde_1" title="Permanent link">&para;</a></h5>
+<p>Metode ini berbentuk
+<script type="math/tex; mode=display">
+k_{1} = hf(x_{i},y_{i})\\
+y_{i+1} = y_{i}+k_{1}\\
+atau\\
+y_{i+1} = y_{i} +hf(x_i,y_{i})
+</script>
+Salah satu bentuk contoh metode Runge-kutta orde 1 adalah memiliki bentuk persamaan seperti metode Euler.</p>
+<p>contoh soal:</p>
+<p>Diketahui PDB <script type="math/tex">\dfrac{dy}{dt} = x + y</script> dan <script type="math/tex">y(0) = 1</script> gunakan metode Runge-Kutta orde 1 untuk menghitung <script type="math/tex">y(0,10)</script> dengan ukuran langkah <script type="math/tex">h = 0.02</script>. Dan diketahui solusi PDB sejatinya = <script type="math/tex">1,1103</script>
+</p>
+<h6 id="a_algoritma_runge-kutta_orde_1">a. Algoritma Runge-Kutta Orde 1<a class="headerlink" href="#a_algoritma_runge-kutta_orde_1" title="Permanent link">&para;</a></h6>
+<ol>
+<li>Deklarasikan fungsi persamaan differensial nya</li>
+<li>Masukkan inputan seperti <script type="math/tex">x_{0},y_{0},xb</script>, dan <script type="math/tex">h</script>.</li>
+<li>Hitung dan buat perulangan yang diperlukan dengan menggunakan rumus <script type="math/tex">n = (x_{b} - x_{0})/h</script>.</li>
+<li>Inisialisasi nilai <script type="math/tex">x</script> dan <script type="math/tex">y</script> awal sama dengan <script type="math/tex">x_{o}</script> dan <script type="math/tex">y_{0}</script>,</li>
+<li>Tentukan nilai analitiknya untuk menghitung nilai eror.</li>
+<li>lakukan perulangan sebanyak n.</li>
+<li>nilai <script type="math/tex">k_{1}</script>, nilai <script type="math/tex">y</script> dan nilai <script type="math/tex">x</script> serta nilai <script type="math/tex">e</script> akan diupdate setiap kali melakukan perulangan, lalu cetak nilai nilai tersebut setiap melakukan perulangan.</li>
+</ol>
+<h6 id="b_source_code_metode_runge-kutta_orde_1">b.  Source Code Metode Runge-Kutta Orde 1<a class="headerlink" href="#b_source_code_metode_runge-kutta_orde_1" title="Permanent link">&para;</a></h6>
+<p>berikut ini merupakan code hasil dari implementasi algoritma di atas.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penyelesaian Sistem Persamaan Differensial Biasa Menggunakan Metode Runge-Kutta Orde1&quot;</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X0 : &quot;</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai y0 : &quot;</span><span class="p">))</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X yang dicari : &quot;</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai h : &quot;</span><span class="p">))</span>
+<span class="n">iterasi</span> <span class="o">=</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">iterasi</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">true</span> <span class="o">=</span>  <span class="mf">1.1103</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE RUNGE-KUTTA1 -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;|i&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;x(i)&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;y(i)</span><span class="se">\t\t</span><span class="s1">|e</span><span class="se">\t\t</span><span class="s1">|k1&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x0</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">|0&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">k1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>dan hasil dari menjalan kan code diatas sebagai berikut.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Penyelesaian</span> <span class="n">Sistem</span> <span class="n">Persamaan</span> <span class="n">Differensial</span> <span class="n">Biasa</span> <span class="n">Menggunakan</span> <span class="n">Metode</span> <span class="n">Runge</span><span class="o">-</span><span class="n">Kutta</span> <span class="n">Orde1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X0</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">y0</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X</span> <span class="n">yang</span> <span class="n">dicari</span> <span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">h</span> <span class="p">:</span> <span class="mf">0.02</span>
+<span class="o">==================================================================</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-</span> <span class="n">METODE</span> <span class="n">RUNGE</span><span class="o">-</span><span class="n">KUTTA1</span> <span class="o">-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="o">==================================================================</span>
+<span class="o">|</span><span class="n">i</span>  <span class="o">|</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span> <span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span><span class="n">e</span>      <span class="o">|</span><span class="n">k1</span>
+<span class="o">|</span><span class="mi">0</span>  <span class="o">|</span> <span class="mf">0.000000</span>  <span class="o">|</span> <span class="mf">1.000000</span>  <span class="o">|</span> <span class="mf">0.110300</span>  <span class="o">|</span><span class="mi">0</span>
+<span class="o">|</span><span class="mi">1</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">1.020000</span>  <span class="o">|</span> <span class="mf">0.090300</span>  <span class="o">|</span> <span class="mf">0.020000</span>
+<span class="o">|</span><span class="mi">2</span>  <span class="o">|</span> <span class="mf">0.040000</span>  <span class="o">|</span> <span class="mf">1.040800</span>  <span class="o">|</span> <span class="mf">0.069500</span>  <span class="o">|</span> <span class="mf">0.020800</span>
+<span class="o">|</span><span class="mi">3</span>  <span class="o">|</span> <span class="mf">0.060000</span>  <span class="o">|</span> <span class="mf">1.062416</span>  <span class="o">|</span> <span class="mf">0.047884</span>  <span class="o">|</span> <span class="mf">0.021616</span>
+<span class="o">|</span><span class="mi">4</span>  <span class="o">|</span> <span class="mf">0.080000</span>  <span class="o">|</span> <span class="mf">1.084864</span>  <span class="o">|</span> <span class="mf">0.025436</span>  <span class="o">|</span> <span class="mf">0.022448</span>
+<span class="o">|</span><span class="mi">5</span>  <span class="o">|</span> <span class="mf">0.100000</span>  <span class="o">|</span> <span class="mf">1.108162</span>  <span class="o">|</span> <span class="mf">0.002138</span>  <span class="o">|</span> <span class="mf">0.023297</span>
+<span class="o">==================================================================</span>
+</code></pre></div>
+
+<h5 id="2_metode_runge-kutta_orde_2">2. Metode Runge-Kutta Orde 2<a class="headerlink" href="#2_metode_runge-kutta_orde_2" title="Permanent link">&para;</a></h5>
+<p>Metode Orde 2 berbentuk
+<script type="math/tex; mode=display">
+k_{1} = hf(x_{i},y_{i})\\
+k_{2} = hf(x_{i}+h,y_{i}+k_{1})\\
+y_{i+1}= y_{i}+\dfrac{1}{2}h(k1+k2)
+</script>
+Salah satu bentuk contoh metode Rengu-Kutta orde 2 dapat dilihat dari bentuk persamaanya yang hampir mirip seperti metode Heun.</p>
+<p>Contoh Soal</p>
+<p>Diketahui PDB <script type="math/tex">\dfrac{dy}{dt} = x + y</script> dan <script type="math/tex">y(0) = 1</script> gunakan metode Runge-Kutta orde 2 untuk menghitung <script type="math/tex">y(0,10)</script> dengan ukuran langkah <script type="math/tex">h = 0.02</script>. Dan diketahui solusi PDB sejatinya = <script type="math/tex">1,1103</script>
+</p>
+<h6 id="a_algoritma_metode_runge-kutta_orde_2">a. Algoritma Metode Runge-Kutta Orde 2<a class="headerlink" href="#a_algoritma_metode_runge-kutta_orde_2" title="Permanent link">&para;</a></h6>
+<ol>
+<li>Deklarasikan persamaan differensial biasanya</li>
+<li>Masukkan inputan seperti <script type="math/tex">x_{0},y_{0},xb</script>, dan <script type="math/tex">h</script>.</li>
+<li>Hitung dan buat perulangan yang dibutuhkan dengan menggunakan rumus <script type="math/tex">n = (x_{b} - x_{0})/h</script>.</li>
+<li>Inisialisasi nilai  <script type="math/tex">x</script> dan <script type="math/tex">y</script> awal sama dengan <script type="math/tex">x_{o}</script> dan <script type="math/tex">y_{0}</script>.</li>
+<li>Tentukan nilai anlitiknya untuk digunakan menghitung eror.</li>
+<li>Lakukan perulangan sebanyak n.</li>
+<li>nilai <script type="math/tex">k_{1}</script> dan <script type="math/tex">k_{2}</script>, nilai <script type="math/tex">y</script> dan nilai <script type="math/tex">x</script> serta nilai <script type="math/tex">e</script> akan di update dan di cetak setiap kali melakukan perulangan.</li>
+</ol>
+<h6 id="b_source_code_metode_runge-kutta_orde_2">b. Source Code Metode Runge-Kutta Orde 2<a class="headerlink" href="#b_source_code_metode_runge-kutta_orde_2" title="Permanent link">&para;</a></h6>
+<p>Berikut ini merukapakan code hasil dari implementasi algoritma di atas.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penyelesaian Sistem Persamaan Differensial Biasa Menggunakan Metode Runge-Kutta Orde2&quot;</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X0 : &quot;</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai y0 : &quot;</span><span class="p">))</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X yang dicari : &quot;</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai h : &quot;</span><span class="p">))</span>
+<span class="n">iterasi</span> <span class="o">=</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">iterasi</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">true</span> <span class="o">=</span>  <span class="mf">1.1103</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE RUNGE-KUTTA2 -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;|i&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;x(i)&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s1">&#39;y(i)</span><span class="se">\t\t</span><span class="s1">|e</span><span class="se">\t\t</span><span class="s1">|k1</span><span class="se">\t\t</span><span class="s1">|k2&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x0</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">|0</span><span class="se">\t\t</span><span class="s2">|0&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">k1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span><span class="p">(</span><span class="n">k1</span> <span class="o">+</span><span class="n">k2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">k1</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">k2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>dan berikut ini merupakan hasil ketika code diatas dijalan kan.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Penyelesaian</span> <span class="n">Sistem</span> <span class="n">Persamaan</span> <span class="n">Differensial</span> <span class="n">Biasa</span> <span class="n">Menggunakan</span> <span class="n">Metode</span> <span class="n">Runge</span><span class="o">-</span><span class="n">Kutta</span> <span class="n">Orde2</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X0</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">y0</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X</span> <span class="n">yang</span> <span class="n">dicari</span> <span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">h</span> <span class="p">:</span> <span class="mf">0.02</span>
+<span class="o">==================================================================================</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-</span> <span class="n">METODE</span> <span class="n">RUNGE</span><span class="o">-</span><span class="n">KUTTA2</span> <span class="o">-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="o">==================================================================================</span>
+<span class="o">|</span><span class="n">i</span>  <span class="o">|</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span> <span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>      <span class="o">|</span><span class="n">e</span>      <span class="o">|</span><span class="n">k1</span>     <span class="o">|</span><span class="n">k2</span>
+<span class="o">|</span><span class="mi">0</span>  <span class="o">|</span> <span class="mf">0.000000</span>  <span class="o">|</span> <span class="mf">1.000000</span>  <span class="o">|</span> <span class="mf">0.110300</span>  <span class="o">|</span><span class="mi">0</span>      <span class="o">|</span><span class="mi">0</span>
+<span class="o">|</span><span class="mi">1</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">1.020400</span>  <span class="o">|</span> <span class="mf">0.089900</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">0.020800</span>
+<span class="o">|</span><span class="mi">2</span>  <span class="o">|</span> <span class="mf">0.040000</span>  <span class="o">|</span> <span class="mf">1.041616</span>  <span class="o">|</span> <span class="mf">0.068684</span>  <span class="o">|</span> <span class="mf">0.020808</span>  <span class="o">|</span> <span class="mf">0.021624</span>
+<span class="o">|</span><span class="mi">3</span>  <span class="o">|</span> <span class="mf">0.060000</span>  <span class="o">|</span> <span class="mf">1.063665</span>  <span class="o">|</span> <span class="mf">0.046635</span>  <span class="o">|</span> <span class="mf">0.021632</span>  <span class="o">|</span> <span class="mf">0.022465</span>
+<span class="o">|</span><span class="mi">4</span>  <span class="o">|</span> <span class="mf">0.080000</span>  <span class="o">|</span> <span class="mf">1.086563</span>  <span class="o">|</span> <span class="mf">0.023737</span>  <span class="o">|</span> <span class="mf">0.022473</span>  <span class="o">|</span> <span class="mf">0.023323</span>
+<span class="o">|</span><span class="mi">5</span>  <span class="o">|</span> <span class="mf">0.100000</span>  <span class="o">|</span> <span class="mf">1.110327</span>  <span class="o">|</span> <span class="mf">0.000027</span>  <span class="o">|</span> <span class="mf">0.023331</span>  <span class="o">|</span> <span class="mf">0.024198</span>
+<span class="o">==================================================================================</span>
+</code></pre></div>
+
+<h5 id="3_metode_runge-kutta_orde_3">3. Metode Runge-Kutta Orde 3<a class="headerlink" href="#3_metode_runge-kutta_orde_3" title="Permanent link">&para;</a></h5>
+<p>Metode runge-kutta orde 3 dikenal karena tingkat ketelitiannya yang lebih tinggi dibandingkan dengan kedua metode runge-kutta sebelumnya. Metode runge-kutta orde 3 memiliki bentuk sebagai berikut:
+<script type="math/tex; mode=display">
+k_{1} = hf(x_{i},y_{i})\\
+k_{2} = hf(x_{i}+\dfrac{h}{2},y_{i}+\dfrac{k_{1}}{2})\\
+k_{3} = hf(x_{i}+h,y_{i}-k{1}+2k_{2})\\
+y_{i+1} = y_{i}+\dfrac{(k_{1}+k_{2}+k_{3})}{6}
+</script>
+Contoh:</p>
+<p>Diketahui PDB <script type="math/tex">\dfrac{dy}{dt} = x + y</script> dan <script type="math/tex">y(0) = 1</script> gunakan metode Runge-Kutta orde 3  untuk menghitung <script type="math/tex">y(0,10)</script> dengan ukuran langkah <script type="math/tex">h = 0.02</script>. Dan diketahui solusi PDB sejatinya = <script type="math/tex">1,1103</script>
+</p>
+<h6 id="a_algoritma_metode_runge-kutta_orde_3">a. Algoritma Metode Runge-Kutta Orde 3<a class="headerlink" href="#a_algoritma_metode_runge-kutta_orde_3" title="Permanent link">&para;</a></h6>
+<ol>
+<li>Deklarasikan fungsi persamaan differensial yang akan diselesaikan.</li>
+<li>masukkan inputan seperti  <script type="math/tex">x_{0},y_{0},xb</script>, dan <script type="math/tex">h</script>.</li>
+<li>Hitung dan buat perulangan yang dibutuhkan dengan menggunakan rumus <script type="math/tex">n = (x_{b} - x_{0})/h</script>.</li>
+<li>Inisialisasi nilai <script type="math/tex">x</script> dan <script type="math/tex">y</script> awal sama dengan <script type="math/tex">x_{o}</script> dan <script type="math/tex">y_{0}</script>.</li>
+<li>Tentukan nilai analitiknya untuk menghitung eror.</li>
+<li>Lakukan perulangan sebanyak n.</li>
+<li>nilai <script type="math/tex">k_{1}</script> hinga <script type="math/tex">k_{3}</script>, nilai <script type="math/tex">y</script> dan nilai <script type="math/tex">x</script> serta nilai <script type="math/tex">e</script> akan di update dan ditampilkan setiap kali melakukan perulangan.</li>
+</ol>
+<h6 id="b_source_code_metode_runge-kutta_orde_3">b. Source Code Metode Runge-Kutta Orde 3<a class="headerlink" href="#b_source_code_metode_runge-kutta_orde_3" title="Permanent link">&para;</a></h6>
+<p>Berikut ini merupakan Source code hasil dari implementasi algoritma di atas</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penyelesaian Persamaan Differensial Biasa Menggunakan Metode Runge-Kutta Orde3&quot;</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X0 : &quot;</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai y0 : &quot;</span><span class="p">))</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X yang dicari : &quot;</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai h : &quot;</span><span class="p">))</span>
+<span class="n">iterasi</span> <span class="o">=</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">iterasi</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">true</span> <span class="o">=</span>  <span class="mf">1.1103</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE RUNGE-KUTTA ORDE 3 -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;|i</span><span class="se">\t</span><span class="s1">|x(i)</span><span class="se">\t\t</span><span class="s1">|y(i)</span><span class="se">\t\t</span><span class="s1">|e</span><span class="se">\t\t</span><span class="s1">|k1</span><span class="se">\t\t</span><span class="s1">|k2</span><span class="se">\t\t</span><span class="s1">|k3&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x0</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|</span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|</span><span class="si">%f</span><span class="s1">|&#39;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|</span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|0&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|0&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|0&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">k1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">k3</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span><span class="p">(</span><span class="n">k1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">k2</span> <span class="o">+</span><span class="n">k3</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">k1</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">k2</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">k3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================================&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>dan hasil ketika code diatas di jalankan maka akan seperti berikut:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Penyelesaian</span> <span class="n">Persamaan</span> <span class="n">Differensial</span> <span class="n">Biasa</span> <span class="n">Menggunakan</span> <span class="n">Metode</span> <span class="n">Runge</span><span class="o">-</span><span class="n">Kutta</span> <span class="n">Orde3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X0</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">y0</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">X</span> <span class="n">yang</span> <span class="n">dicari</span> <span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span> <span class="n">h</span> <span class="p">:</span> <span class="mf">0.02</span>
+<span class="o">==================================================================================================</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-</span> <span class="n">METODE</span> <span class="n">RUNGE</span><span class="o">-</span><span class="n">KUTTA</span> <span class="n">ORDE</span> <span class="mi">3</span> <span class="o">-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="o">==================================================================================================</span>
+<span class="o">|</span><span class="n">i</span>  <span class="o">|</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>       <span class="o">|</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>       <span class="o">|</span><span class="n">e</span>      <span class="o">|</span><span class="n">k1</span>     <span class="o">|</span><span class="n">k2</span>     <span class="o">|</span><span class="n">k3</span>
+<span class="o">|</span><span class="mi">0</span>  <span class="o">|</span><span class="mf">0.000000</span>   <span class="o">|</span><span class="mf">1.000000</span><span class="o">|</span>  <span class="o">|</span><span class="mf">0.110300</span>   <span class="o">|</span><span class="mi">0</span>      <span class="o">|</span><span class="mi">0</span>      <span class="o">|</span><span class="mi">0</span>
+<span class="o">|</span><span class="mi">1</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">1.020403</span>  <span class="o">|</span> <span class="mf">0.089897</span>  <span class="o">|</span> <span class="mf">0.020000</span>  <span class="o">|</span> <span class="mf">0.020400</span>  <span class="o">|</span> <span class="mf">0.020816</span>
+<span class="o">|</span><span class="mi">2</span>  <span class="o">|</span> <span class="mf">0.040000</span>  <span class="o">|</span> <span class="mf">1.041622</span>  <span class="o">|</span> <span class="mf">0.068678</span>  <span class="o">|</span> <span class="mf">0.020808</span>  <span class="o">|</span> <span class="mf">0.021216</span>  <span class="o">|</span> <span class="mf">0.021641</span>
+<span class="o">|</span><span class="mi">3</span>  <span class="o">|</span> <span class="mf">0.060000</span>  <span class="o">|</span> <span class="mf">1.063673</span>  <span class="o">|</span> <span class="mf">0.046627</span>  <span class="o">|</span> <span class="mf">0.021632</span>  <span class="o">|</span> <span class="mf">0.022049</span>  <span class="o">|</span> <span class="mf">0.022482</span>
+<span class="o">|</span><span class="mi">4</span>  <span class="o">|</span> <span class="mf">0.080000</span>  <span class="o">|</span> <span class="mf">1.086574</span>  <span class="o">|</span> <span class="mf">0.023726</span>  <span class="o">|</span> <span class="mf">0.022473</span>  <span class="o">|</span> <span class="mf">0.022898</span>  <span class="o">|</span> <span class="mf">0.023340</span>
+<span class="o">|</span><span class="mi">5</span>  <span class="o">|</span> <span class="mf">0.100000</span>  <span class="o">|</span> <span class="mf">1.110342</span>  <span class="o">|</span> <span class="mf">0.000042</span>  <span class="o">|</span> <span class="mf">0.023331</span>  <span class="o">|</span> <span class="mf">0.023765</span>  <span class="o">|</span> <span class="mf">0.024215</span>
+<span class="o">==================================================================================================</span>
+</code></pre></div>
+
+<h5 id="4_metode_runge-kutta_orde_4">4. Metode Runge-Kutta Orde 4<a class="headerlink" href="#4_metode_runge-kutta_orde_4" title="Permanent link">&para;</a></h5>
+<p>Metode ini merupakan metode penyelesaian persamaan differensial biasa dengan tingkat ketelitian yang tinggi. Bentuk umum nya sebagai berikut
+<script type="math/tex; mode=display">
+k_{1} = hf(x_{i},y_{i})\\
+k_{2} = hf(x_{i}+\dfrac{h}{2},y_{i}+\dfrac{k1}{2})\\
+k_{3} = hf(x_{i}+\dfrac{h}{2},y_{i}+\dfrac {k_{2}}{2})\\
+k_{4} = hf(x_{i}+h,y_{i}+k_{3})\\
+y_{i+1} = y_{i}+\dfrac{k_{1}+2k_{2}+2k_{3}+k_{4}}{6}
+</script>
+contoh: </p>
+<p>Diketahui PDB <script type="math/tex">\dfrac{dy}{dt} = x + y</script> dan <script type="math/tex">y(0) = 1</script> gunakan metode Runge-Kutta orde 4  untuk menghitung <script type="math/tex">y(0,10)</script> dengan ukuran langkah <script type="math/tex">h = 0.02</script>. Dan diketahui solusi PDB sejatinya = <script type="math/tex">1,1103</script>
+</p>
+<h6 id="a_algortma_metode_runge-kutta_orde_4">a. Algortma Metode Runge-Kutta Orde 4<a class="headerlink" href="#a_algortma_metode_runge-kutta_orde_4" title="Permanent link">&para;</a></h6>
+<ol>
+<li>Deklarasikan fungsi persamaan differensial biasa yang akan diselesaikan.</li>
+<li>masukkan inputan seperti <script type="math/tex">x_{0},y_{0},xb</script>, dan <script type="math/tex">h</script>.</li>
+<li>Hitung dan buat perulangan yang dibutuhkan dengan menggunakan rumus <script type="math/tex">n = (x_{b} - x_{0})/h</script>.</li>
+<li>Inisialisasi nilai <script type="math/tex">x</script> dan <script type="math/tex">y</script> awal sama dengan <script type="math/tex">x_{o}</script> dan <script type="math/tex">y_{0}</script>.</li>
+<li>Tentukan nilai analitiknya untuk menghitung nilai eror.</li>
+<li>nilai <script type="math/tex">k_{1}</script> hinga <script type="math/tex">k_{4}</script>, nilai <script type="math/tex">y</script> dan nilai <script type="math/tex">x</script> serta nilai <script type="math/tex">e</script> akan diupdate dan ditamplikan setiap kali melakukan perulangan.</li>
+</ol>
+<h6 id="b_source_code_metode_runge-kutta_orde_4">b. Source Code Metode Runge-Kutta Orde 4<a class="headerlink" href="#b_source_code_metode_runge-kutta_orde_4" title="Permanent link">&para;</a></h6>
+<p>berkut ini adalah</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penyelesaian Sistem Persamaan Differensial Biasa Menggunakan Metode Runge-Kutta Orde4&quot;</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X0 : &quot;</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai y0 : &quot;</span><span class="p">))</span>
+<span class="n">xb</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai X yang dicari : &quot;</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai h : &quot;</span><span class="p">))</span> 
+<span class="n">iterasi</span> <span class="o">=</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">iterasi</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">true</span> <span class="o">=</span>  <span class="mf">1.1103</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE RUNGE-KUTTA ORDE 4 -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;|i</span><span class="se">\t</span><span class="s1">|x(i)</span><span class="se">\t\t</span><span class="s1">|y(i)</span><span class="se">\t\t</span><span class="s1">|e</span><span class="se">\t\t</span><span class="s1">|k1</span><span class="se">\t\t</span><span class="s1">|k2</span><span class="se">\t\t</span><span class="s1">|k3</span><span class="se">\t\t</span><span class="s1">|k4&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x0</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|</span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|</span><span class="si">%f</span><span class="s1">|&#39;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|</span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|0&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|0&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|0&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">|0&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">k1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">k3</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">k2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">k4</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">k3</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3</span><span class="o">+</span><span class="n">k4</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;|</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">|&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">k1</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">k2</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="s2">|&quot;</span><span class="o">%</span><span class="n">k3</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">k4</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;==================================================================================================================&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>dan output dari hasil running code diatas sebagai berikut:</p>
+<div class="codehilite"><pre><span></span><code>Penyelesaian Sistem Persamaan Differensial Biasa Menggunakan Metode Runge-Kutta Orde4
+Masukkan Nilai X0 : 0
+Masukkan Nilai y0 : 1
+Masukkan Nilai X yang dicari : 0.1
+Masukkan Nilai h : 0.02
+==================================================================================================================
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;- METODE RUNGE-KUTTA ORDE 3 -&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+==================================================================================================================
+|i  |x(i)       |y(i)       |e          |k1         |k2         |k3         |k4
+|0  |0.000000   |1.000000|  |0.110300   |0          |0          |0          |0
+|1  | 0.020000  | 1.020403  | 0.089897  | 0.020000  | 0.020400  | 0.020404  | 0.020808
+|2  | 0.040000  | 1.041622  | 0.068678  | 0.020808  | 0.021216  | 0.021220  | 0.021632
+|3  | 0.060000  | 1.063673  | 0.046627  | 0.021632  | 0.022049  | 0.022053  | 0.022473
+|4  | 0.080000  | 1.086574  | 0.023726  | 0.022473  | 0.022898  | 0.022902  | 0.023332
+|5  | 0.100000  | 1.110342  | 0.000042  | 0.023331  | 0.023765  | 0.023769  | 0.024207
+==================================================================================================================
+</code></pre></div>
+
+<h3 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h3>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>https://app.schoology.com/course/4711478201/materials/gp/4905811750&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>http://iffatul.staff.gunadarma.ac.id/Downloads/files/46564/BAb-+08+Solusi+Persamaan+Diferensial+Bi&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../SNPL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Solusi Numerik Persamaan Liner" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Solusi Numerik Persamaan Liner
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2019 peaceiris
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/peaceiris" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/piris314en" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
