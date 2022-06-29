@@ -249,9 +249,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import_module" class="md-nav__link">
+    IMPORT MODULE
+  </a>
+  
+    <nav class="md-nav" aria-label="IMPORT MODULE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#load_dataset" class="md-nav__link">
     Load DataSet
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -296,9 +309,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#import_module" class="md-nav__link">
+    IMPORT MODULE
+  </a>
+  
+    <nav class="md-nav" aria-label="IMPORT MODULE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#load_dataset" class="md-nav__link">
     Load DataSet
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -319,11 +345,16 @@
                   </a>
                 
                 
-                <h1 id="crawling">CRAWLING<a class="headerlink" href="#crawling" title="Permanent link">&para;</a></h1>
-<p>Apa itu <em>web crawling</em>?</p>
+                <h1 id="crawling"><strong>CRAWLING</strong><a class="headerlink" href="#crawling" title="Permanent link">&para;</a></h1>
+<p>Data crawling atau perayapan data adalah proses pengambilan data yang tersedia secara online untuk umum. Proses ini kemudian mengimpor informasi atau data yang telah ditemukan ke dalam file lokal di komputer Anda.</p>
 <p>Dikutip dari <a href="https://totally.tech/quick-guides/search-engine-basics-crawling-indexing-ranking/">Totally Tech</a>, <em>web crawling</em> adalah proses di mana <em>search engine</em> menemukan konten yang di-<em>update</em> di sebuah situs atau halaman baru, perubahan situs, atau <em>link</em> yang mati.</p>
-<p>Adapun menurut <a href="https://moz.com/beginners-guide-to-seo/how-search-engines-operate">Moz</a>, <em>web crawling</em> adalah proses di mana mesin pencari mengirimkan tim robot (<em>crawler</em> atau <em>spider</em>) untuk menemukan konten-konten baru dan konten yang telah di-<em>update.</em></p>
-<h4 id="code_untuk_scrapy">code untuk scrapy<a class="headerlink" href="#code_untuk_scrapy" title="Permanent link">&para;</a></h4>
+<p>Adapun menurut <a href="https://moz.com/beginners-guide-to-seo/how-search-engines-operate">Moz</a>, <em>web crawling</em> adalah proses di mana mesin pencari mengirimkan tim robot (<em>crawler</em> atau <em>spider</em>) untuk menemukan konten-konten baru dan konten yang telah di-update.</p>
+<p>Langkah-langkah mengcrawling data:
+1. tentukan terlebih dahulu web yang akan di crawling
+2. lalu klik kanan setelah itu klik inspect
+3. tentukan data yang akan diambil di web tersebut
+4. berikut adalah code untuk mengcrawling data</p>
+<h2 id="code_untuk_scrapy">code untuk scrapy<a class="headerlink" href="#code_untuk_scrapy" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">scrapy</span>
 <span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
 
@@ -366,8 +397,9 @@
 <span class="err">​</span>        <span class="p">}</span>
 </code></pre></div>
 
-<p><strong>IMPORT MODULE</strong></p>
+<h2 id="import_module"><strong>IMPORT MODULE</strong><a class="headerlink" href="#import_module" title="Permanent link">&para;</a></h2>
 <p>import library yang dibutuhkan</p>
+<p>mengimport module untuk proses pemodelan data</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># data visualisation and manipulation</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -405,13 +437,14 @@
 
 <h4 id="load_dataset">Load DataSet<a class="headerlink" href="#load_dataset" title="Permanent link">&para;</a></h4>
 <p>Tahap Processing menggunakan data crawling</p>
+<p>import dataset nya "tika.csv"</p>
 <div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tika.csv&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 
-<p>Berikut untuk code tabel yang tidak digunakan</p>
+<p>menggunakan method drop untuk mendrop kolom. Dengan method ini, Anda dapat memasukkan nama kolom ataupun indeks kolom.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># drop the publish date.</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;judul&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
@@ -444,6 +477,7 @@
   <span class="k">return</span> <span class="n">cleaned_text</span>
 </code></pre></div>
 
+<p>NLTK adalah singkatan dari Natural Language Tool Kit, yaitu sebuah library yang digunakan untuk membantu kita dalam bekerja dengan teks. Library ini memudahkan kita untuk memproses teks seperti melakukan classification, tokenization, stemming, tagging, parsing, dan semantic reasoning</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># time taking</span>
 <span class="c1">#nltk.download(&#39;wordnet&#39;)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span>
@@ -455,9 +489,11 @@
 <div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 
+<p>untuk mendelete isi</p>
 <div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;isi&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
+<p>untuk mendelete angka</p>
 <div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;hapus angka&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
@@ -467,6 +503,10 @@
 <div class="codehilite"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;clean_text_isi&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 
+<p>1) LSA umumnya diimplementasikan dengan nilai Tfidf di mana tidak menggunakan Count Vectorizer.</p>
+<p>2) max_features tergantung pada daya komputasi Anda dan juga pada eval. </p>
+<p>3) Nilai default untuk min_df &amp; max_df berfungsi dengan baik.</p>
+<p>4) Dapat mencoba nilai yang berbeda untuk ngram_range.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">vect</span> <span class="o">=</span><span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="n">stop_words</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># to play with. min_df,max_df,max_features etc...</span>
 </code></pre></div>
 
@@ -477,6 +517,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">vect_text</span><span class="p">)</span>
 </code></pre></div>
 
+<p>Ditahap akhir dari text preprocessing adalah <em>term-weighting .Term-weighting</em> merupakan proses pemberian bobot <em>term</em> pada dokumen. Pembobotan ini digunakan nantinya oleh algoritma Machine Learning untuk klasifikasi dokumen. Ada beberapa metode yang dapat digunakan, salah satunya adalah TF-IDF (Term Frequency-Inverse Document Frequency).</p>
 <div class="codehilite"><pre><span></span><code><span class="n">idf</span><span class="o">=</span><span class="n">vect</span><span class="o">.</span><span class="n">idf_</span>
 </code></pre></div>
 
