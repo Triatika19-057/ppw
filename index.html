@@ -242,29 +242,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#code_untuk_scrapy" class="md-nav__link">
-    code untuk scrapy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import_module" class="md-nav__link">
-    IMPORT MODULE
-  </a>
-  
-    <nav class="md-nav" aria-label="IMPORT MODULE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#load_dataset" class="md-nav__link">
     Load DataSet
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -302,29 +282,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#code_untuk_scrapy" class="md-nav__link">
-    code untuk scrapy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import_module" class="md-nav__link">
-    IMPORT MODULE
-  </a>
-  
-    <nav class="md-nav" aria-label="IMPORT MODULE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#load_dataset" class="md-nav__link">
     Load DataSet
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -354,7 +314,7 @@
 2. lalu klik kanan setelah itu klik inspect
 3. tentukan data yang akan diambil di web tersebut
 4. berikut adalah code untuk mengcrawling data</p>
-<h2 id="code_untuk_scrapy">code untuk scrapy<a class="headerlink" href="#code_untuk_scrapy" title="Permanent link">&para;</a></h2>
+<p><strong>code untuk scrapy</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">scrapy</span>
 <span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
 
@@ -397,7 +357,7 @@
 <span class="err">​</span>        <span class="p">}</span>
 </code></pre></div>
 
-<h2 id="import_module"><strong>IMPORT MODULE</strong><a class="headerlink" href="#import_module" title="Permanent link">&para;</a></h2>
+<p><strong>IMPORT MODULE</strong></p>
 <p>import library yang dibutuhkan</p>
 <p>mengimport module untuk proses pemodelan data</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># data visualisation and manipulation</span>
@@ -521,6 +481,7 @@
 <div class="codehilite"><pre><span></span><code><span class="n">idf</span><span class="o">=</span><span class="n">vect</span><span class="o">.</span><span class="n">idf_</span>
 </code></pre></div>
 
+<p>Latent Semantic Analysis (LSA) merupakan sebuah metode yang memanfaatkan model statistik matematis untuk menganalisa struktur semantik suatu teks. LSA bisa digunakan untuk menilai esai dengan mengkonversikan esai menjadi matriks-matriks yang diberi nilai pada masing-masing term untuk dicari kesamaan dengan term referensi. Secara umum, langkah-langkah LSA dalam penilaian esai adalah sebagai berikut:</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
 <span class="n">lsa_model</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;randomized&#39;</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
